@@ -5,6 +5,10 @@ using static System.Console;
 
 namespace NorthwindApp
 {
+    /// <summary>
+    /// COMP3973 Week 1 Lab 1
+    /// Krzysztof Szczurowski: A01013054
+    /// </summary>
     class MyNorthwindApp
     {
 		static String answer = String.Empty;
@@ -17,12 +21,13 @@ namespace NorthwindApp
             WriteLine("Choose from below options: ");
             do
             {
+                WriteLine();
                 WriteLine("[1] - Get All Category");
                 WriteLine("[2] - Insert New Recod to Category Table");
                 WriteLine("[3] - Update Record in Category Table");
                 WriteLine("[4] - Delete record in Category Table");
                 WriteLine("[0] - Exit");
-				WriteLine("====================");
+				WriteLine("=====================================);
 				Write("Your choice: \t");
                 answer = ReadLine().ToString();
                 switch (answer)
