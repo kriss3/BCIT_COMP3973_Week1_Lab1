@@ -22,18 +22,18 @@ namespace NorthwindApp
             do
             {
                 WriteLine();
-                WriteLine("[1] - Get All Category");
+                WriteLine("[1] - Get TOP 15 Customers");
                 WriteLine("[2] - Insert New Recod to Category Table");
                 WriteLine("[3] - Update Record in Category Table");
                 WriteLine("[4] - Delete record in Category Table");
                 WriteLine("[0] - Exit");
-				WriteLine("=====================================);
+				WriteLine("=====================================");
 				Write("Your choice: \t");
                 answer = ReadLine().ToString();
                 switch (answer)
                 {
                     case "1":
-                        GetCategories();
+                        GetTopCustomers();
                         break;
 					case "2":
 						InsertCategory();
@@ -57,13 +57,18 @@ namespace NorthwindApp
             Console.ReadLine();
         }
 
-        static void GetCategories()
+        static void GetTopCustomers()
         {
             var ctx = new NorthwindContext();
 			Clear();
-            foreach (var i in ctx.Categories)
+            var qry = ctx.Customers.Take(15);
+            var counter = 1;
+            WriteLine($"{"Id",2} {"Cust ID",-10}\t{"Company Name",-35}\t{"Contact Name",-20}\t{"Country",-10}\t{"City",-10}");
+            WriteLine("===========================================================================================================");
+            foreach (var cust in qry)
             {
-				WriteLine($"{i.CategoryId}\t{i.CategoryName}\t{i.Description}");
+				WriteLine($"{counter,2}. {cust.CustomerId,-10}\t{cust.CompanyName,-35}\t{cust.ContactName,-20}\t{cust.Country,-10}\t{cust.City,-10}");
+                counter++;
             }
 			ForegroundColor = ConsoleColor.Green;
 			Write("Press any key to continue...");
