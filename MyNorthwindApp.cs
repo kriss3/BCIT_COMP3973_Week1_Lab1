@@ -15,7 +15,11 @@ namespace NorthwindApp
         static NorthwindContext ctx = new NorthwindContext();
         static void Main(string[] args)
         {
-            WriteLine($"Hello  {Environment.UserName} - Welcome to Lab 1 of COMP 3973\nPress key to Start!");
+            var  welcomeMsg = $"Hello {Environment.UserName} - Welcome to Lab 1 of COMP 3973";
+            WriteLine();
+            ForegroundColor = ConsoleColor.DarkMagenta;
+            WriteLine(String.Format("{0," + ((WindowWidth / 2) + (welcomeMsg.Length / 2)) + "}", welcomeMsg));
+            ForegroundColor = ConsoleColor.Gray;
 			ReadKey();
 			Clear();
             WriteLine("Choose from below options: ");
