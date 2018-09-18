@@ -34,7 +34,7 @@ namespace NorthwindApp.NW
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=max.bcit.ca;Database=Northwind;Persist Security Info=True;User ID=nw;Password=N0rth+Star;");
+                optionsBuilder.UseSqlServer("Data Source=max.bcit.ca;Database=Northwind;Persist Security Info=True;User ID=northwind;Password=N0rth-W1nd;");
             }
         }
 
