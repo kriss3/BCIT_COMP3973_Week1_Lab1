@@ -127,7 +127,7 @@ namespace NorthwindApp
 
             var newCust = new Customers()
             {
-                CustomerId = custId,
+                CustomerId = custId.ToUpper(),
                 CompanyName = compName,
                 ContactName = contactName
             };
